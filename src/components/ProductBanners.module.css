@@ -1,0 +1,166 @@
+.section {
+  margin: 0 auto;
+}
+.orange {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--crl-primary);
+  padding: 2rem;
+  border-radius: 10px;
+  background-image: url(../assets/home/desktop/pattern-circles.svg);
+  background-size: 165%;
+  background-position: 45%;
+  background-position-y: -120px;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 4.6rem;
+}
+.orange::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../assets/home/desktop/image-speaker-zx9.png);
+  background-position: 50% 10%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+}
+.orangeText {
+  position: relative;
+  top: 55%;
+  text-align: center;
+  z-index: 99;
+}
+.orangeText > h1 {
+  color: white;
+}
+
+.orangeText > p {
+  color: white;
+}
+.orangeText> a > button {
+  background-color: black;
+  margin: 0;
+  margin-bottom: 3rem;
+}
+.orangeText> a > button:hover {
+  background-color: white;
+  color: black;
+}
+
+.gray {
+  width: 100%;
+  height: 35vh;
+  background-image: url(../assets/home/mobile/image-speaker-zx7.jpg);
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 4.6rem;
+}
+.grayText {
+  position: relative;
+  top: 30%;
+  width: 50%;
+}
+.grayText > h1 {
+  font-size: 2.7rem;
+}
+.whiteBtn {
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  margin-left: 0;
+}
+.whiteBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+.imageSide {
+  width: 100%;
+  height: 30vh;
+  background-image: url(../assets/home/desktop/image-earphones-yx1.jpg);
+  background-position: center center;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.textSide {
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--crl-gray-light);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.textSide > h1 {
+  font-size: 2.7rem;
+}
+
+@media (min-width: 768px) {
+  .orange {
+    height: 65vh;
+    background-position-y: -220px;
+    background-size: 100%;
+  }
+  .orange::after {
+    background-position: 50% 10%;
+    background-size: 30%;
+  }
+  .orangeText > p {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+
+  .earphones {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .orange {
+    height: 560px;
+    background-position: -180% 0%;
+    background-size: 90%;
+    max-height: 500px;
+  }
+  .orange::after {
+    background-position: 20% 110%;
+    background-size: 34%;
+  }
+  .orangeText {
+    position: relative;
+    top: 25%;
+    left: 60%;
+    text-align: start;
+    width: 30%;
+  }
+
+  .orangeText > p {
+    width: 100%;
+  }
+
+  .gray {
+    height: 42vh;
+    max-height: 350px;
+    background-image: url(../assets/home/desktop/image-speaker-zx7.jpg);
+  }
+  .grayText {
+    left: 10%;
+  }
+  .imageSide {
+    background-position: fill;
+    margin-right: 2.7rem;
+  }
+  .textSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

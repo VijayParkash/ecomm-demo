@@ -1,0 +1,63 @@
+/* :root {
+  --var-img:url()
+} */
+
+.productCard {
+  margin-bottom: 5rem;
+}
+
+.imageContainer {
+  border-radius: 10px;
+  text-align: center;
+}
+
+.imageContainer > img {
+  max-width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.text {
+  text-align: center;
+}
+
+.text > h1 {
+  margin-bottom: 2rem;
+}
+
+.text > p {
+  margin-bottom: 2rem;
+}
+
+.text > button {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1025px) {
+  .productCard {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .productCard:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .text {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .text > button {
+    margin: 0;
+  }
+
+  .imageContainer {
+    width: 45%;
+  }
+}

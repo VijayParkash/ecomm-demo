@@ -1,13 +1,214 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Manrope");
+
+/* VARIABLES ======================================== */
+:root {
+  --crl-primary: hsl(22, 65%, 57%);
+  --crl-primary-light: hsl(21, 94%, 75%);
+  --crl-black: hsl(0, 0%, 6%);
+  --crl-gray: hsl(0, 1%, 66%);
+  --crl-gray-light: hsl(0, 0%, 93%);
+
+  --max-width: 1100px;
+
+  /* min-width */
+  --mq-small: 768px;
+  --mq-medium: 1025px;
+  --mq-large: 1366px;
+
+  position: relative;
+
+}
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* important ======================================================= */
+html {
+  font-size: 62.5%;
+}
+/* important ======================================================= */
+
+body {
+  font-family: "Manrope", sans-serif;
+  position: relative;
+}
+/* When the cart is open */
+.no-scroll{
+  overflow: hidden;
+
+}
+main,section {
+  max-width: var(--max-width);
+}
+main {
+  margin: 0 auto;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 5.8rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 3rem;
+}
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.4rem;
+  letter-spacing: 0.15rem;
+  margin-bottom: 2.5rem;
+
+}
+h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3.6rem;
+  letter-spacing: 0.115rem;
+  margin-bottom: 2rem;
+}
+h4 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+h5 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.3rem;
+  letter-spacing: 0.17rem;
+  margin-bottom: 1rem;
+}
+h6 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0.13rem;
+}
+.overline {
+  color: var(--crl-primary);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  letter-spacing: 0.1rem;
+}
+.sub-title {
+  color: var(--crl-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+    letter-spacing: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: var(--crl-gray);
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 3.8rem;
+    letter-spacing: 0.2rem;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    letter-spacing: 0.15rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    letter-spacing: 0.115rem;
+  }
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 3.8rem;
+    letter-spacing: 0.2rem;
+  }
+  h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 3.3rem;
+    letter-spacing: 0.17rem;
+  }
+  h6 {
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    letter-spacing: 0.13rem;
+  }
+}
+
+button {
+  width: 16rem;
+  height: 4.8rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: white;
+  background-color: var(--crl-primary);
+  text-transform: uppercase;
+  border: none;
+  margin: 0 1rem;
+  margin-left: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+button:hover {
+  background-color: var(--crl-primary-light);
+}
+
+.btn-light {
+  border: 1px solid var(--crl-black);
+  background-color: white;
+  color: black;
+}
+.btn-light:hover {
+  background-color: var(--crl-black);
+  color: white;
+}
+
+.btn-arrow {
+  background-color: transparent;
+  color: var(--crl-black);
+}
+.btn-arrow:hover {
+  background-color: transparent;
+  color: var(--crl-primary);
+}
+
+
+
+.pagination {
+width: 90%;
+margin: auto;
 }

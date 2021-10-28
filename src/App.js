@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import "./App.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Earphones from "./pages/Earphones";
+import Speakers from "./pages/Speakers";
+import Headphones from "./pages/Headphones";
+import { getAll } from "./apis/ProductApi";
+import ProductDetails from "./components/ProductDetails";
+import ScrollTop from "./helpers/ScrollTop";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    async function fetchData() {
+      const request = await getAll().catch((err) => {
+        console.log("Err", err);
+      });
+      dispatch({ type: "GET_DATA_FROM_DB", payload: request });
+    }
+    fetchData();
+  }, [dispatch]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ScrollTop>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/headphones">
+            <Headphones />
+          </Route>
+          <Route exact path="/speakers">
+            <Speakers />
+          </Route>
+          <Route exact path="/earphones">
+            <Earphones />
+          </Route>
+          <Route exact path="/product-details/:slug">
+            <ProductDetails />
+          </Route>
+          {/* <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route> */}
+        </Switch>
+        <Footer />
+      </ScrollTop>
+    </BrowserRouter>
   );
 }
 
